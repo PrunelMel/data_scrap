@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 
-import mechanicalsoup, sqlite3
+import sqlite3
 
 from bs4 import BeautifulSoup
 
@@ -9,8 +9,6 @@ page = urlopen("https://myads.africa")
 code = page.read().decode("utf-8")
 
 soup = BeautifulSoup(code, "html.parser")
-
-browser = mechanicalsoup.Browser()
 
 div = soup.select("div.ad-listing ")
 
